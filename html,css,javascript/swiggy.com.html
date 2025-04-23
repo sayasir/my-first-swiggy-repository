@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>swiggy</title>
+    <link rel="icon" href="./image/swiggy-boy1.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .fullbody {
+            height: 100%;
+            width: 100%;
+            background-color: aqua;
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+
+            border: 2px solid red;
+            flex-grow: 1;
+            display: flex;
+            padding: 7px;
+        }
+
+        .home {
+            border: 2px solid green;
+            flex-grow: 1;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 5px;
+
+
+        }
+
+        .profileimg {
+            border: 2px solid green;
+            flex-grow: 1;
+            text-align: center;
+            color: white;
+            padding: 2px;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        .center {
+            border: 2px solid blue;
+            flex-grow: 20;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+        }
+
+        .mainpart {
+            border: 2px solid blue;
+            flex-grow: 20;
+            overflow: auto;
+            overflow-y: scroll;
+            scrollbar-width: none;
+            overflow-x: hidden;
+
+
+
+
+
+
+
+
+
+
+        }
+
+        .footer {
+            border: 2px solid green;
+            flex-grow: 1;
+            text-align: center;
+
+
+
+
+
+        }
+
+        #icon-home {
+            margin-right: 5px;
+        }
+
+        #icon-home2 {
+            margin-left: 3px;
+        }
+
+        .profile {
+            background-color: black;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            padding: 1px;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+
+        }
+
+        .newpage1 {
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: gray;
+            display: none;
+
+        }
+
+        .newpage2 {
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: gray;
+            display: none;
+        }
+
+        a {
+            cursor: pointer;
+        }
+
+        .search-bar {
+            width: 100%;
+            height: 68px;
+            border: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .search-bar-inside {
+            height: 30px;
+            width: 91%;
+            border: 1px solid rgb(235, 228, 228);
+            border-radius: 11px;
+            background-color: white;
+            outline: 1px solid white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px;
+            padding-right: 10px;
+            padding-left: 10px;
+            cursor: pointer;
+        }
+
+        .newpage3 {
+            height: 100%;
+            width: 100%;
+            background-color: rgb(3, 44, 3);
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+
+
+        }
+
+
+
+        .mainbox {}
+
+        .footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2px;
+
+        }
+
+        .img1 {
+            border: 1px solid red;
+            flex-grow: 1;
+            padding: 5px;
+            height: 40px;
+            margin: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+
+
+
+        }
+
+        .orange-part {
+            border: 5px solid red;
+        }
+
+        .orange-part3 {
+            height: 120px;
+            width: 100%;
+            border: 2px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+
+
+
+
+        }
+
+        .paragrap-boy {
+            border: 1px solid red;
+            width: 80%;
+            height: 40%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+
+        }
+
+        .orange-part3-1 {
+            height: 120px;
+            width: 100%;
+            border: 2px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .paragrap-boy1 {
+            border: 1px solid red;
+            height: 100%;
+            width: 100%;
+            display: flex;
+
+        }
+
+        .part1-1 {
+            border: 1px solid green;
+            width: 65%;
+            height: 100%;
+
+        }
+
+        #part1-1 {
+            margin-top: 20px;
+            margin-left: 20px;
+            font-size: 1.1rem;
+            font-weight: lighter;
+            letter-spacing: 0.5px;
+        }
+
+        .part1-2 {
+            border: 1px solid green;
+            width: 35%;
+            height: 100%;
+        }
+
+        @media screen and (max-width:600px) {
+            .orange-part3 {
+                display: none;
+            }
+        }
+
+        @media screen and (min-width:600px) {
+            .orange-part3-1 {
+                display: none;
+            }
+        }
+
+        .four-clickbox1 {
+            border: 3px solid rgb(202, 226, 43);
+            height: 344px;
+            width: 100%;
+            position: relative;
+
+
+
+        }
+
+        .clickbox1 {
+            border: 1px solid black;
+            height: 42%;
+            width: 44%;
+            position: absolute;
+            top: 0;
+            left: 10px;
+            border-radius: 10px;
+            background-color: white;
+            position: relative;
+            cursor: pointer;
+
+
+        }
+
+        .fooddelivery {
+            position: absolute;
+            top: -10px;
+            left: 8px;
+        }
+
+        .form-restarun {
+            position: absolute;
+            top: -8px;
+            left: 8px;
+        }
+
+
+
+
+        .clickbox2 {
+            border: 1px solid black;
+            height: 42%;
+            width: 44%;
+            position: absolute;
+            top: 0;
+            right: 12px;
+            border-radius: 10px;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        .clickbox3 {
+            border: 1px solid black;
+            height: 42%;
+            width: 44%;
+            position: absolute;
+            bottom: 20px;
+            left: 10px;
+            border-radius: 10px;
+            background-color: white;
+            cursor: pointer;
+
+        }
+
+        .clickbox4 {
+            border: 1px solid black;
+            height: 42%;
+            width: 44%;
+            position: absolute;
+            bottom: 20px;
+            right: 12px;
+            border-radius: 10px;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        @media screen and (min-width:600px) {
+            .four-clickbox1 {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width:600px) {
+            .four-clickbox2 {
+                display: none;
+            }
+        }
+
+        .four-clickbox2 {
+            border: 3px solid rgb(202, 226, 43);
+            height: 370px;
+            width: 100%;
+            position: relative;
+
+
+
+        }
+
+        .clickbox2-1 {
+            border: 1px solid black;
+            height: 160px;
+            width: 160px;
+            position: absolute;
+            top: 0;
+            left: 100px;
+            margin: 5px;
+            border-radius: 10px;
+            background-color: white;
+
+        }
+
+        .clickbox2-2 {
+            border: 1px solid black;
+            height: 160px;
+            width: 160px;
+            position: absolute;
+            top: 0;
+            right: 100px;
+            margin: 5px;
+            border-radius: 10px;
+            background-color: white;
+
+        }
+
+        .clickbox2-3 {
+            border: 1px solid black;
+            height: 160px;
+            width: 160px;
+            position: absolute;
+            bottom: 10px;
+            left: 100px;
+            margin: 5px;
+            border-radius: 10px;
+            background-color: white;
+
+        }
+
+        .clickbox2-4 {
+            border: 1px solid black;
+            height: 160px;
+            width: 160px;
+            position: absolute;
+            bottom: 10px;
+            right: 100px;
+            margin: 5px;
+            border-radius: 10px;
+            background-color: white;
+        }
+
+        .mainpart-2 {
+            height: 300px;
+            width: 100%;
+            border: 5px solid black;
+            background-color: rgb(89, 44, 44);
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+
+
+
+        }
+
+        .boxslider {
+            height: 200px;
+            width: 95%;
+            background-color: wheat;
+            border: 2px solid black;
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: nowrap;
+          
+            position: absolute;
+            right: 0;
+
+
+        }
+
+        .mini-box {
+            background-color: wheat;
+            width: 112px;
+            height: 100%;
+            display: inline-block;
+            border: 1px solid black;
+        }
+        @media screen and (min-width:600px) {
+            .boxslider{
+       width: 98%;
+       scrollbar-width: 5px;
+       
+
+            }
+        }
+        @media screen and (max-width:600px) {
+            .boxslider {
+             scrollbar-width: none;
+            }
+        }
+
+
+
+
+
+
+
+
+        .newpage4 {
+            height: 100%;
+            width: 100%;
+            background-color: rgb(228, 168, 17);
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+
+
+
+        }
+
+        .newpage5 {
+            height: 100%;
+            width: 100%;
+            background-color: rgb(212, 226, 21);
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+
+
+
+        }
+
+        .newpage6 {
+            height: 100%;
+            width: 100%;
+            background-color: rgb(25, 2, 4);
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+
+
+
+        }
+
+        .newpage7 {
+            height: 100%;
+            width: 100%;
+            background-color: rgb(150, 9, 49);
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+
+
+
+        }
+
+        .active {
+            display: block;
+        }
+    </style>
+    <script>
+        function menu1() {
+            let home = document.querySelector(".newpage1")
+            home.classList.add("active")
+        }
+        function menu2() {
+            let profile = document.querySelector(".newpage2")
+            profile.classList.add("active")
+        }
+        function search1() {
+            let searchbox = document.querySelector(".newpage3")
+            searchbox.classList.add("active")
+        }
+        function menu3() {
+            let profile = document.querySelector(".newpage4")
+            profile.classList.add("active")
+        }
+        function menu4() {
+            let profile = document.querySelector(".newpage5")
+            profile.classList.add("active")
+        }
+        function menu5() {
+            let profile = document.querySelector(".newpage6")
+            profile.classList.add("active")
+        }
+        function menu6() {
+            let profile = document.querySelector(".newpage7")
+            profile.classList.add("active")
+        }
+    </script>
+</head>
+
+<body>
+    <div class="fullbody">
+
+
+        <div class="mainpart">
+            <div class="orange-part">
+                <div class="header">
+                    <div class="home"> <a onclick="menu1()"><i class="fa-solid fa-house" id="icon-home"></i>home<i
+                                class="fa-solid fa-chevron-down" id="icon-home2"></i></a></div>
+                    <div class="center">yasir mew website</div>
+                    <div class="profileimg">
+                        <div class="profile" onclick="menu2()"><i class="fa-solid fa-user" id="profile-icon"></i></div>
+                    </div>
+                </div>
+
+                <div class="search-bar">
+                    <div class="search-bar-inside" onclick="search1()">
+                        <p>Search for restaurant, item or more</p>
+                        <i class="fa-solid fa-magnifying-glass" class="mainbox"></i>
+                    </div>
+
+                </div>
+
+
+
+                <div class="orange-part3">
+                    <div class="paragrap-boy">
+                        <div class="part1">
+                            <p id="part1">Order food & groceries. Discover best restarants.Swiggy it!</p>
+                        </div>
+                        <div class="part2"><img src="./image/swiggy-boy1.png" style="height: 90px; width: 90px;"></div>
+                    </div>
+                </div>
+
+                <div class="orange-part3-1">
+                    <div class="paragrap-boy1">
+                        <div class="part1-1">
+                            <p id="part1-1">Order food & groceries.<br> Discover best restarants.<br>Swiggy it!</p>
+                        </div>
+                        <div class="part1-2"><img src="./image/swiggy-boy1.png"
+                                style="height: 90px; width: 90px; margin-left: 18px; margin-top: 7px;"></div>
+                    </div>
+                </div>
+                <div class="four-clickbox1">
+                    <div class="clickbox1" onclick="menu3()">
+
+
+                        <h4 class="fooddelivery">
+                            FOOD DELIVERY
+                        </h4>
+                        <h6 class="form-restarunt" style="color: gray;margin-top: 36px; margin-left: 8px;">
+                            FROM RESTAURANTS
+                        </h6>
+                        <h6 class="upto60%"
+                            style="color: rgb(250, 50, 10); font-size: 0.6rem; margin-left: 14px; margin-top: -21px; background-color: bisque; width: fit-content;">
+                            UP TO 60% OFF
+                        </h6>
+                        <img src="./image/plateofburger.png"
+                            style="height: 63px; width:auto;margin-top: 0px;    margin-left: 66px;">
+
+
+                    </div>
+
+                    <div class="clickbox2" onclick="menu4()">
+
+                        <h4 class="fooddelivery">
+                            INSTAMART
+                        </h4>
+                        <h6 class="form-restarunt" style="color: gray;margin-top: 36px; margin-left: 8px;">
+                            THE EVERYTHING STORE
+                        </h6>
+                        <h6 class="upto60%"
+                            style="color: rgb(250, 50, 10); font-size: 0.6rem; margin-left: 14px; margin-top: -21px; background-color: bisque; width: fit-content;">
+                            FREE DELIVERY
+                        </h6>
+                        <img src="./image/noodle.png"
+                            style="height: 63px; width:auto;margin-top: 0px;    margin-left: 66px;">
+
+                    </div>
+                    <div class="clickbox3" onclick="menu5()">
+                        <h4 class="fooddelivery">
+                            DINEOUT
+                        </h4>
+                        <h6 class="form-restarunt" style="color: gray;margin-top: 36px; margin-left: 8px;">
+                            EAT OUT & SAVE MORE
+                        </h6>
+                        <h6 class="upto60%"
+                            style="color: rgb(250, 50, 10); font-size: 0.6rem; margin-left: 14px; margin-top: -21px; background-color: bisque; width: fit-content;">
+                            UP TO 50% OFF
+                        </h6>
+                        <img src="./image/spoonplate.png"
+                            style="height: 70px; width:auto;    margin-top: -8px;       margin-left: 92px;">
+
+                    </div>
+                    <div class="clickbox4" onclick="menu6()">
+                        <h4 class="fooddelivery">
+                            GENIE
+                        </h4>
+                        <h6 class="form-restarunt" style="color: gray;margin-top: 36px; margin-left: 8px;">
+                            SEND PARCELS CITY-WIDE
+                        </h6>
+                        <h6 class="upto60%"
+                            style="color: rgb(250, 50, 10); font-size: 0.6rem; margin-left: 14px; margin-top: -21px; background-color: bisque; width: fit-content;">
+                            UP TO 30% OFF
+                        </h6>
+                        <img src="./image/deliveryboy.png"
+                            style="    height: 103px; width:auto;    margin-top: -38px;    margin-left: 62px;">
+
+                    </div>
+
+                </div>
+                <div class="four-clickbox2">
+                    <div class="clickbox2-1" onclick="menu3()">
+                        <h4 class="fooddelivery">
+                            FOOD DELIVERY
+                        </h4>
+                        <h6 class="form-restarunt" style="color: gray;margin-top: 36px; margin-left: 8px;">
+                            FROM RESTAURANTS
+                        </h6>
+                        <h6 class="upto60%"
+                            style="color: rgb(250, 50, 10); font-size: 0.6rem; margin-left: 14px; margin-top: -21px; background-color: bisque; width: fit-content;">
+                            UP TO 60% OFF
+                        </h6>
+                        <img src="./image/plateofburger.png"
+                            style="height: 63px; width:auto;margin-top: 10px;    margin-left: 66px; ">
+                    </div>
+                    <div class="clickbox2-2" onclick="menu4()">
+                        <h4 class="fooddelivery">
+                            INSTAMART
+                        </h4>
+                        <h6 class="form-restarunt" style="color: gray;margin-top: 36px; margin-left: 8px;">
+                            THE EVERYTHING STORE
+                        </h6>
+                        <h6 class="upto60%"
+                            style="color: rgb(250, 50, 10); font-size: 0.6rem; margin-left: 14px; margin-top: -21px; background-color: bisque; width: fit-content;">
+                            FREE DELIVERY
+                        </h6>
+                        <img src="./image/noodle.png"
+                            style="height: 63px; width:auto;margin-top: 10px;    margin-left: 66px;">
+                    </div>
+                    <div class="clickbox2-3" onclick="menu5()">
+                        <h4 class="fooddelivery">
+                            DINEOUT
+                        </h4>
+                        <h6 class="form-restarunt" style="color: gray;margin-top: 36px; margin-left: 8px;">
+                            EAT OUT & SAVE MORE
+                        </h6>
+                        <h6 class="upto60%"
+                            style="color: rgb(250, 50, 10); font-size: 0.6rem; margin-left: 14px; margin-top: -21px; background-color: bisque; width: fit-content;">
+                            UP TO 50% OFF
+                        </h6>
+                        <img src="./image/spoonplate.png"
+                            style="height: 70px; width:auto;    margin-top: 5px;       margin-left: 92px;">
+                    </div>
+                    <div class="clickbox2-4" onclick="menu6()">
+                        <h4 class="fooddelivery">
+                            GENIE
+                        </h4>
+                        <h6 class="form-restarunt" style="color: gray;margin-top: 36px; margin-left: 8px;">
+                            SEND PARCELS CITY-WIDE
+                        </h6>
+                        <h6 class="upto60%"
+                            style="color: rgb(250, 50, 10); font-size: 0.6rem; margin-left: 14px; margin-top: -21px; background-color: bisque; width: fit-content;">
+                            UP TO 30% OFF
+                        </h6>
+                        <img src="./image/deliveryboy.png"
+                            style="    height: 103px; width:auto;    margin-top: -25px;    margin-left: 62px;">
+                    </div>
+
+                </div>
+
+
+
+            </div>
+            <div class=" mainpart-2">
+                <div class="boxslider">
+                    <div class="mini-box">
+                     box1
+                    </div>
+                    <div class="mini-box">
+                        box2
+                    </div>
+                    <div class="mini-box">
+                        box3
+                    </div>
+                    <div class="mini-box">
+                        box4
+                    </div>
+                    <div class="mini-box">
+                        box5
+                    </div>
+                    <div class="mini-box">
+                        box6
+                    </div>
+                    <div class="mini-box">
+                        box7
+                    </div>
+                    <div class="mini-box">
+                        box8
+                    </div>
+                    <div class="mini-box">
+                        box9
+                    </div>
+                    <div class="mini-box">
+                        box10
+                    </div>
+                    <div class="mini-box">
+                        box11
+                    </div>
+                    <div class="mini-box">
+                        box12
+                    </div>
+                    <div class="mini-box">
+                        box13
+                    </div>
+                    <div class="mini-box">
+                        box14
+                    </div>
+                    <div class="mini-box">
+                        box15
+                    </div>
+                    <div class="mini-box">
+                        box16
+                    </div>
+                    <div class="mini-box">
+                        box17
+                    </div>
+                    <div class="mini-box">
+                        box18
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+
+
+            mainpart<br>
+            Let me but live my life from year to year,
+            with forward face and unreluctant soul;
+            Not hurrying to, not turning from the goal;
+            Not mourning for the things that disappear
+            In the dim past, nor holding back in fear
+            From what the future veils; but with whole
+            And happy heart, that pays its toll
+            To youth and age, and travels on with cheer.
+
+
+            So let the way wind up the hill or down,
+            o'er rough or smooth, the journey will be joy:
+            Still seeking what I sought when but a boy,
+            new friendship, high adventure, and a crown,
+            My heart will keep the courage of the quest,
+            And hope the road's last turn will be the best.
+
+            -Henry Van Dyke
+
+
+
+            I AM EVERY WOMEN
+
+
+            A women is beauty innate,
+            A symbol of power and strength.
+            She puts her life at stake,
+            She's real, she's not fake!
+
+            The summer of life she's ready to see in spring.
+            She says,"spring will come again my dear.
+            Let me care for the once who're near."
+            She's The Women - she has no fear!
+
+            Strong is she in her faith and beliefs.
+            "persistence is the key to every thing,"
+            says she. Despite the sighs and groans and moans,
+            She's strong in her faith, firm in her belief!
+
+            She's a lioness, don't mess with her.
+            She'll not spare you if you're a prankster.
+            Don't ever try to saw her pride, her selfrespect.
+            She knows how to thaw you, saw you so-beware!
+
+            She's todays woman. todays woman dear.
+            Love her, Respect her, and keep her near...
+            <br>
+            -Rakhi Nariani Shirke
+
+
+
+
+
+
+            THE SECRET OF THE MACHINES
+
+            To hate our brothers, it is ourselves
+            That we shall dispossess, betray, and condemn
+            s, betray, and condemn
+            Remember we who take arms against each other.
+            <br>
+            It is the human earth that we defile
+            Our hells of fire and dust outrage the innocence
+            Of air that is everywhere our own.
+            Remember, no men are foreign, and no countries strange.<br>
+            They, too, aware of sun and air and water,
+            Are fed by peaceful harvests, by war's long winter starv'd
+            Their hands are ours, and in their lines we read
+            A labour not different from our own.
+            <br>
+            Remember they have eyes like ours that wake
+            Or sleep and strength that can be won
+            By love. In every land is common life
+            That all can recognise and understand<br>
+
+            Let us remember, whenever we are told
+            To hate our brothers, it is ourselves
+            That we shall dispossess, betray, and condemn
+            Remember we who take arms against each other.
+            <br>
+            It is the human earth that we defile
+            Our hells of fire and dust outrage the innocence
+            Of air that is everywhere our own.
+            Remember, no men are foreign, and no countries strange.<br>
+            They, too, aware of sun and air and water,
+            Are fed by peaceful harvests, by war's long winter starv'd
+            Their hands are ours, and in their lines we read
+            A labour not different from our own.
+            <br>
+            Remember they have eyes like ours that wake
+            Or sleep and strength that can be won
+            By love. In every land is common life
+            That all can recognise and understand<br>
+
+            Let us remember, whenever we are told
+            To hate our brothers, it is ourselves
+            That we shall dispossess, betray, and condemn
+            Remember we who take arms against each other.
+            <br>
+            It is the human earth that we defile
+            Our hells of fire and dust outrage the innocence
+            Of air that is everywhere our own.
+            Remember, no men are foreign, and no countries strange.<br>
+            They, too, aware of sun and air and water,
+            Are fed by peaceful harvests, by war's long winter starv'd
+            Their hands are ours, and in their lines we read
+            A labour not different from our own.
+            <br>
+            Remember they have eyes like ours that wake
+            Or sleep and strength that can be won
+            By love. In every land is common life
+            That all can recognise and understand<br>
+
+            Let us remember, whenever we are told
+            To hate our brothers, it is ourselves
+            That we shall dispossess, betray, and condemn
+            Remember we who take arms against each other.
+            <br>
+            It is the human earth that we defile
+            Our hells of fire and dust outrage the innocence
+            Of air that is everywhere our own.
+            Remember, no men are foreign, and no countries strange.<br>
+            They, too, aware of sun and air and water,
+            Are fed by peaceful harvests, by war's long winter starv'd
+            Their hands are ours, and in their lines we read
+            A labour not different from our own.
+            <br>
+            Remember they have eyes like ours that wake
+            Or sleep and strength that can be won
+            By love. In every land is common life
+            That all can recognise and understand<br>
+
+            Let us remember, whenever we are told
+            To hate our brothers, it is ourselves
+            That we shall dispossess, betray, and condemn
+            Remember we who take arms against each other.
+            <br>
+            It is the human earth that we defile
+            Our hells of fire and dust outrage the innocence
+            Of air that is everywhere our own.
+            Remember, no men are foreign, and no countries strange.<br>
+            They, too, aware of sun and air and water,
+            Are fed by peaceful harvests, by war's long winter starv'd
+            Their hands are ours, and in their lines we read
+            A labour not different from our own.
+            <br>
+            Remember they have eyes like ours that wake
+            Or sleep and strength that can be won
+            By love. In every land is common life
+            That all can recognise and understand<br>
+
+            Let us remember, whenever we are told
+            To hate our brothers, it is ourselves
+            That we shall dispossess, betray, and condemn
+            Remember we who take arms against each other.
+            <br>
+            It is the human earth that we defile
+            Our hells of fire and dust outrage the innocence
+            Of air that is everywhere our own.
+            Remember, no men are foreign, and no countries strange.<br>
+            They, too, aware of sun and air and water,
+            Are fed by peaceful harvests, by war's long winter starv'd
+            Their hands are ours, and in their lines we read
+            A labour not different from our own.
+            <br>
+            Remember they have eyes like ours that wake
+            Or sleep and strength that can be won
+            By love. In every land is common life
+            That all can recognise and understand<br>
+
+            Let us remember, whenever we are told
+            To hate our brothers, it is ourselves
+            That we shall dispossess, betray, and condemn
+            Remember we who take arms against each other.
+            <br>
+            It is the human earth that we defile
+            Our hells of fire and dust outrage the innocence
+            Of air that is everywhere our own.
+            Remember, no men are foreign, and no countries strange.<br>
+            They, too, aware of sun and air and water,
+            Are fed by peaceful harvests, by war's long winter starv'd
+            Their hands are ours, and in their lines we read
+            A labour not different from our own.
+            <br>
+            Remember they have eyes like ours that wake
+            Or sleep and strength that can be won
+            By love. In every land is common life
+            That all can recognise and understand<br>
+
+            Let us remember, whenever we are told
+            To hate our brothers, it is ourselves
+            That we shall dispossess, betray, and condemn
+            Remember we who take arms against each other.
+            <br>
+            It is the human earth that we defile
+            Our hells of fire and dust outrage the innocence
+            Of air that is everywhere our own.
+            Remember, no men are foreign, and no countries strange.<br>
+            They, too, aware of sun and air and water,
+            Are fed by peaceful harvests, by war's long winter starv'd
+            Their hands are ours, and in their lines we read
+            A labour not different from our own.
+            <br>
+            Remember they have eyes like ours that wake
+            Or sleep and strength that can be won
+            By love. In every land is common life
+            That all can recognise and understand<br>
+
+            Let us remember, whenever we are told
+            To hate our brothers, it is ourselves
+            That we shall dispossess, betray, and condemn
+            Remember we who take arms against each other.
+            <br>
+            It is the human earth that we defile
+            Our hells of fire and dust outrage the innocence
+            Of air that is everywhere our own.
+            Remember, no men are foreign, and no countries strange.<br>
+            They, too, aware of sun and air and water,
+            Are fed by peaceful harvests, by war's long winter starv'd
+            Their hands are ours, and in their lines we read
+            A labour not different from our own.
+            <br>
+            Remember they have eyes like ours that wake
+            Or sleep and strength that can be won
+            By love. In every land is common life
+            That all can recognise and understand<br>
+
+            Let us remember, whenever we are told
+            To hate our brothers, it is ourselves
+            That we shall dispossess, betray, and condemn
+            Remember we who take arms against each other.
+            <br>
+            It is the human earth that we defile
+            Our hells of fire and dust outrage the innocence
+            Of air that is everywhere our own.
+            Remember, no men are foreign, and no countries strange.<br>
+
+        </div>
+
+        <div class="footer">
+            <div class="img1"> img1</div>
+            <div class="img1">img2</div>
+            <div class="img1">img3</div>
+            <div class="img1">img4</div>
+        </div>
+
+    </div>
+    <div class="newpage1"></div>
+    <div class="newpage2"></div>
+    <div class="newpage3"></div>
+    <div class="newpage4"></div>
+    <div class="newpage5"></div>
+    <div class="newpage6"></div>
+    <div class="newpage7"></div>
+
+
+
+
+</body>
+
+</html>
